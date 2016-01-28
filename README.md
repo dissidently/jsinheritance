@@ -37,38 +37,38 @@ If you understand them completely - you have done, if not - below is a more deta
 ## Some JavaScript basics
 ### Basic part
 * In JavaScript we have functions and objects
-* There is no `classes` and no `constructors` in a language. ES6 `class` is only a syntactical sugar
+* There are no `classes` and no `constructors` in the language. ES6's `class` is only syntactical sugar
 * There are no `methods` or `members` in an object, there are only `properties`
-* Object property can hold a value or reference to another object or function
+* An Object property can hold a value or reference to another object or function
 * Functions are also objects, but of special type
 * Any function can be invoked as a constructor, but this doesn't mean it *should* be invoked as a constructor
-* Functions, which are intended to be used as constructors, just called `constructor functions`. Tey have to be invoked with a `new` keyword to construct a new object
+* Functions, which are intended to be used as constructors, are called `constructor functions`. They are invoked with a `new` keyword to construct a new object
 * By convention, constructor functions are named with `PascalCase`, all other functions are named with `camelCase`
-* Function in JavaScript is a main force. It can be used as:
-  * a regular function
-  * an object, because it is object
-  * a constructor
+* Functions in JavaScript are its main force and defining feature of the language. Functions can be used as:
+  * regular functions
+  * an object, because they are objects
+  * as constructors
   * a name space
   * a closure to capture context
-  * ... and hundreds of other usages
+  * ... and hundreds of other uses
 
 ### Advanced part
 #### Functions
 * Every **function declaration** immediately creates **TWO OBJECTS**:
   * the `function` object itself
   * the `prototype` object, belonging to this function
-  * That happens **before** any code execution even begins, just after code parsing
-* `function` object can be accessed just using function name without parenthesis, for example `myFunction`
-* `prototype` object can be accessed using `prototype` property of `function` object, for example `myFunction.prototype`
-* `prototype` object is used by JavaScript, when function is invoked as a `constructor` (with `new` keyword) to initialize newly constructed object `__proto__` property
-* `prototype` object of `constructor function` is reminiscent of what is usually stored in `class` definition, in classical OOP languages like Java and C++
-* `constructor function` and its `prototype` object are always come togehter
-* `prototype` object does not used at all, if function is not intended to be used as a constructor
+  * This happens **before** any code execution begins, right after code parsing
+* `function` object can be accessed using the function name without parenthesis, e.g. `myFunction`
+* `prototype` object can be accessed using the `prototype` property of a `function` object, e.g. `myFunction.prototype`
+* `prototype` object is used by JavaScript. When a function is invoked as a `constructor` (with `new` keyword) to initialize a newly constructed object ??? `__proto__` property // something missing here to make this clearer???
+* `prototype` object of `constructor function` is reminiscent of a `class` definition, in classical OOP languages like Java and C++
+* `constructor function` and its `prototype` object always come together
+* `prototype` object does not get used if a function is not intended to be used as a constructor
 
 #### Objects
 * Every object has a built-in `__proto__` property
-* `__proto__` property correspond to internal, hidden `[[Prototype]]` property of the object
-* `function` object and its `prototype` object, **both**, also have `__proto__` property
+* `__proto__` property correspond to internal, hidden `[[Prototype]]` property of the object // ???
+* `function` object and its `prototype` object, **both**, also have `__proto__` property // Still no wiser on what a __proto__ is???
 * `__proto__` property as an accessor, standardized only in ES6. In ES5, existance of `__proto__` property depends on implementation. In ES5 standard way to access value of `[[Prototype]]` property is `Object.getPrototypeOf()` method
 * In ES6 `__proto__` property can be set, it just holds reference to another object. In ES6 there is also a `Object.setPrototypeOf()` method
 * It is possible to create object without `__proto__` property using `var obj = Object.create(null)`
